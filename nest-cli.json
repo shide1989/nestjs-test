@@ -1,0 +1,48 @@
+{
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/test-project/src",
+  "monorepo": true,
+  "root": "apps/test-project",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "apps/test-project/tsconfig.app.json"
+  },
+  "projects": {
+    "test-project": {
+      "type": "application",
+      "root": "apps/test-project",
+      "entryFile": "main",
+      "sourceRoot": "apps/test-project/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/test-project/tsconfig.app.json"
+      }
+    },
+    "stats": {
+      "type": "application",
+      "root": "apps/stats",
+      "entryFile": "main",
+      "sourceRoot": "apps/stats/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/stats/tsconfig.app.json"
+      }
+    },
+    "crypto-bot": {
+      "type": "application",
+      "root": "apps/crypto-bot",
+      "entryFile": "main",
+      "sourceRoot": "apps/crypto-bot/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/crypto-bot/tsconfig.app.json"
+      }
+    },
+    "wallet": {
+      "type": "library",
+      "root": "libs/wallet",
+      "entryFile": "index",
+      "sourceRoot": "libs/wallet/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/wallet/tsconfig.lib.json"
+      }
+    }
+  }
+}

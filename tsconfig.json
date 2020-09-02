@@ -11,11 +11,23 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@wallet/wallet": [
+      "@app/wallet": [
         "libs/wallet/src"
       ],
-      "@wallet/wallet/*": [
+      "@app/wallet/*": [
         "libs/wallet/src/*"
+      ],
+      "@app/coinbase": [
+        "libs/coinbase/src"
+      ],
+      "@app/coinbase/*": [
+        "libs/coinbase/src/*"
+      ],
+      "@app/core": [
+        "libs/core/src"
+      ],
+      "@app/core/*": [
+        "libs/core/src/*"
       ]
     }
   },

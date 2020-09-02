@@ -43,6 +43,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/wallet/tsconfig.lib.json"
       }
+    },
+    "coinbase": {
+      "type": "library",
+      "root": "libs/coinbase",
+      "entryFile": "index",
+      "sourceRoot": "libs/coinbase/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/coinbase/tsconfig.lib.json"
+      }
     }
   }
 }

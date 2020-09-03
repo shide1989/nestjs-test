@@ -1,8 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { join } from 'path';
-console.log('__dirname', __dirname)
+import { RatesEntity } from '@app/core/rates/rates.entity';
 
 @Module({
   imports: [
@@ -17,7 +16,7 @@ console.log('__dirname', __dirname)
           username: configService.get('POSTGRES_USER'),
           password: configService.get('POSTGRES_PASSWORD'),
           database: configService.get('POSTGRES_DB'),
-          entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+          entities: [RatesEntity],
           synchronize: true,
         } as any),
     }),

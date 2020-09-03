@@ -85,7 +85,9 @@
       "core/core/(.*)": "<rootDir>/libs/core/src/$1",
       "core/core": "<rootDir>/libs/core/src",
       "@app/test/(.*)": "<rootDir>/libs/test/src/$1",
-      "@app/test": "<rootDir>/libs/test/src"
+      "@app/test": "<rootDir>/libs/test/src",
+      "@app/core/(.*)": "<rootDir>/libs/core/src/$1",
+      "@app/core": "<rootDir>/libs/core/src"
     }
   }
 }

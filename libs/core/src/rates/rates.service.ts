@@ -1,20 +1,27 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { RateEntity } from './rate.entity';
-import { FindConditions, Repository } from 'typeorm/index';
+import { RatesEntity } from './rates.entity';
+import { FindConditions, FindManyOptions, Repository } from 'typeorm/index';
 
 @Injectable()
-export class RateService {
+export class RatesService {
   constructor(
-    @InjectRepository(RateEntity) private readonly rateRepository: Repository<RateEntity>,
+    @InjectRepository(RatesEntity)
+    private readonly rateRepository: Repository<RatesEntity>,
   ) {}
 
-  public async save(data: Partial<RateEntity>) {
-    return this.rateRepository.create(data);
+  public async create(data: Partial<RatesEntity>) {
+    const newData = await this.rateRepository.create(data);
+    await this.rateRepository.save(newData);
+    return newData;
   }
 
-  public async find(options?: FindConditions<RateEntity>) {
-    return this.rateRepository.find(options);
+  async delete(id: string): Promise<void> {
+    await this.rateRepository.delete(id);
+  }
+
+  public async findOne(options?: FindConditions<RatesEntity>) {
+    return this.rateRepository.findOne(options);
     /*return [
       {
         currency: 'EUR',
@@ -46,6 +53,10 @@ export class RateService {
         createdAt: '2020-05-24T16:06:01+02:00',
       },
     ]*/
+  }
+
+  public async findAll(options?: FindManyOptions<RatesEntity>): Promise<RatesEntity[]> {
+    return await this.rateRepository.find(options);
   }
   /*async getExchangeRates: (
     baseCurrency: string,

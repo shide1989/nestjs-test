@@ -1,8 +1,8 @@
 import { Column, CreateDateColumn, PrimaryGeneratedColumn } from 'typeorm';
 import { Entity } from 'typeorm/index';
 
-@Entity({ name: 'rates' })
-export class RateEntity {
+@Entity('rates')
+export class RatesEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
